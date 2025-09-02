@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Modelo y Principios - Ingeniería de Software</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Page Counter -->
+    <div class="page-counter">
+        <span id="slideCounter">1 / 24</span>
+    </div>
+    
+    <!-- Hidden Navigation Buttons -->
+    <button id="prevBtn" class="hidden-nav-btn" disabled>
+        <i class="fas fa-chevron-left"></i>
+    </button>
+    <button id="nextBtn" class="hidden-nav-btn">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!-- Slide Container -->
+    <div class="slide-container">
+        <!-- Slide 1: Portada -->
+        <div class="slide active" id="slide1">
+            <div class="slide-content title-slide">
+                <div class="title-container">
+                    <div class="decorative-circle circle-1"></div>
+                    <div class="decorative-circle circle-2"></div>
+                    <h1 class="main-title">EL MODELO Y PRINCIPIOS</h1>
+                    <h2 class="subtitle">Ingeniería de Software<br>Principios que Guían el Proceso y la Práctica</h2>
+                    <div class="title-decoration">
+                        <div class="decoration-line"></div>
+                        <i class="fas fa-cogs"></i>
+                        <div class="decoration-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: El Modelo -->
+        <div class="slide" id="slide2">
+            <div class="slide-content">
+                <h1 class="slide-title">EL MODELO</h1>
+                <div class="quote-container">
+                    <div class="quote-box primary-quote">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="quote-text">"Conocimiento de desarrollo de software tiene vida media de 3 años, la mitad de lo que necesitas saber hoy estará obsoleto dentro de 3 años"</p>
+                    </div>
+                    <div class="quote-box secondary-quote">
+                        <i class="fas fa-lightbulb quote-icon"></i>
+                        <p class="quote-text">"A diferencia de las tecnologías que cambian cada pocos años, los principios de ingeniería de software no caducan; son conocimientos que acompañan y sirven a un programador durante toda su carrera."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Principios del Proceso -->
+        <div class="slide" id="slide3">
+            <div class="slide-content">
+                <h1 class="slide-title">PRINCIPIOS QUE GUÍAN EL PROCESO</h1>
+                <div class="content-section">
+                    <p class="intro-text">No importa si el modelo es:</p>
+                    <div class="model-types">
+                        <div class="model-card">
+                            <i class="fas fa-arrow-right"></i>
+                            <span>Lineal</span>
+                        </div>
+                        <div class="model-card">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Iterativo</span>
+                        </div>
+                        <div class="model-card">
+                            <i class="fas fa-rocket"></i>
+                            <span>Ágil</span>
+                        </div>
+                    </div>
+                    <div class="highlight-box">
+                        <p>“Los principios de la ingeniería de software se apoyan en una estructura general de proceso (planificación, análisis, diseño, implementación, pruebas, mantenimiento) que es aplicable a cualquier modelo de desarrollo.”</p>
+                        <p class="emphasis">Los principios fundamentales se aplican a la estructura, y por tanto a todo el proceso de software</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Los 8 Principios Fundamentales -->
+        <div class="slide" id="slide4">
+            <div class="slide-content">
+                <h1 class="slide-title">LOS 8 PRINCIPIOS FUNDAMENTALES</h1>
+                <div class="principles-grid">
+                    <div class="principle-card color-1">
+                        <div class="principle-number">1</div>
+                        <div class="principle-text">Ser Ágil</div>
+                    </div>
+                    <div class="principle-card color-2">
+                        <div class="principle-number">2</div>
+                        <div class="principle-text">Centrarse en la CALIDAD</div>
+                    </div>
+                    <div class="principle-card color-3">
+                        <div class="principle-number">3</div>
+                        <div class="principle-text">Estar Listo para Adaptar</div>
+                    </div>
+                    <div class="principle-card color-4">
+                        <div class="principle-number">4</div>
+                        <div class="principle-text">Formar un Equipo Eficaz</div>
+                    </div>
+                    <div class="principle-card color-1">
+                        <div class="principle-number">5</div>
+                        <div class="principle-text">Comunicación y Coordinación</div>
+                    </div>
+                    <div class="principle-card color-2">
+                        <div class="principle-number">6</div>
+                        <div class="principle-text">Administrar el Cambio</div>
+                    </div>
+                    <div class="principle-card color-3">
+                        <div class="principle-number">7</div>
+                        <div class="principle-text">Evaluar el Riesgo</div>
+                    </div>
+                    <div class="principle-card color-4">
+                        <div class="principle-number">8</div>
+                        <div class="principle-text">Crear Productos de Valor</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Ser Ágil -->
+        <div class="slide" id="slide5">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-bolt"></i> 1. SER ÁGIL
+                </h1>
+                <div class="principle-detail">
+                    <div class="main-concept">
+                        <p>Los principios de desarrollo ágil deben de gobernar en el enfoque.</p>
+                    </div>
+                    <div class="concept-breakdown">
+                        <h3><i class="fas fa-universal-access"></i>Aplicar agilidad significa:</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> Trabajar de manera eficiente, enfocándose en las acciones que aportan valor.</li>
+                            <li><i class="fas fa-check"></i> Mantener enfoque técnico sencillo</li>
+                            <li><i class="fas fa-check"></i> Iterar rápidamente y ajustar según feedback.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Centrarse en la Calidad -->
+        <div class="slide" id="slide6">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-bullseye"></i> 2. CENTRARSE EN LA CALIDAD
+                </h1>
+                <div class="quality-focus">
+                    <div class="quality-statement">
+                        <h2>En cada etapa, centrarse en la CALIDAD</h2>
+                        <p>Para toda actividad, acción y tarea del proceso.</p>
+                        <p>Garantizar que cada tarea y producto de trabajo cumpla con estándares, evitando errores acumulativos.</p>
+                    </div>
+                    <div class="quality-visual">
+                        <div class="quality-circle">
+                            <i class="fas fa-award"></i>
+                            <span>CALIDAD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Estar Listo para Adaptar -->
+        <div class="slide" id="slide7">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-sync-alt"></i> 3. ESTAR LISTO PARA ADAPTAR
+                </h1>
+                <div class="adaptation-content">
+                    <div class="adaptation-points">
+                        <div class="adaptation-item">
+                            <div class="adapt-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="adapt-text">
+                                <h3>Prepararse para restricciones</h3>
+                                <p>Del problema, equipo y proyecto</p>
+                            </div>
+                        </div>
+                        <div class="adaptation-item">
+                            <div class="adapt-icon">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <div class="adapt-text">
+                                <h3>Adaptarse sin perder objetivos</h3>
+                                <p>Mantener los objetivos principales intactos</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Formar un Equipo Eficaz -->
+        <div class="slide" id="slide8">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-users"></i> 4. FORMAR UN EQUIPO EFICAZ
+                </h1>
+                <div class="team-content">
+                    <div class="team-foundation">
+                        <div class="foundation-item">
+                            <div class="foundation-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3>Base del equipo</h3>
+                            <p>Confianza y respeto mutuo</p>
+                        </div>
+                    </div>
+                    <div class="team-principles">
+                        <div class="team-principle">
+                            <i class="fas fa-people-arrows"></i>
+                            <span>Colaboración</span>
+                        </div>
+                        <div class="team-principle">
+                            <i class="fas fa-share-alt"></i>
+                            <span>Conocimiento compartido</span>
+                        </div>
+                        <div class="team-principle">
+                            <i class="fas fa-vote-yea"></i>
+                            <span>Decisiones conjuntas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Comunicación y Coordinación -->
+        <div class="slide" id="slide9">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-comments"></i> 5. COMUNICACIÓN Y COORDINACIÓN
+                </h1>
+                <div class="communication-coord-content">
+                    <div class="coord-objectives">
+                        <div class="coord-item">
+                            <div class="coord-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="coord-text">
+                                <h3>Evitar pérdida de información crítica</h3>
+                                <p>Mantener la información importante accesible</p>
+                            </div>
+                        </div>
+                        <div class="coord-item">
+                            <div class="coord-icon">
+                                <i class="fas fa-broadcast-tower"></i>
+                            </div>
+                            <div class="coord-text">
+                                <h3>Establecer canales claros</h3>
+                                <p>Comunicación constante y efectiva</p>
+                            </div>
+                        </div>
+                        <div class="coord-item">
+                            <div class="coord-icon">
+                                <i class="fas fa-crosshairs"></i>
+                            </div>
+                            <div class="coord-text">
+                                <h3>Alinear al equipo</h3>
+                                <p>Con objetivos y tareas específicas</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Administrar el Cambio -->
+        <div class="slide" id="slide10">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-edit"></i> 6. ADMINISTRAR EL CAMBIO
+                </h1>
+                <div class="change-management">
+                    <div class="change-approach">
+                        <div class="change-item">
+                            <div class="change-icon">
+                                <i class="fas fa-clipboard-list"></i>
+                            </div>
+                            <div class="change-text">
+                                <h3>Manejo formal o informal</h3>
+                                <p>Según la situación lo requiera</p>
+                            </div>
+                        </div>
+                        <div class="change-process">
+                            <div class="process-step">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Solicitar</span>
+                            </div>
+                            <div class="process-arrow">→</div>
+                            <div class="process-step">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Aprobar</span>
+                            </div>
+                            <div class="process-arrow">→</div>
+                            <div class="process-step">
+                                <i class="fas fa-tools"></i>
+                                <span>Implementar</span>
+                            </div>
+                        </div>
+                        <div class="change-goal">
+                            <p><strong>Sin afectar el proyecto</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Evaluar el Riesgo -->
+        <div class="slide" id="slide11">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-shield-alt"></i> 7. EVALUAR EL RIESGO
+                </h1>
+                <div class="risk-evaluation">
+                    <div class="risk-strategy">
+                        <div class="risk-item">
+                            <div class="risk-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                            <div class="risk-text">
+                                <h3>Identificar riesgos temprano</h3>
+                                <p>Antes de que se conviertan en problemas</p>
+                            </div>
+                        </div>
+                        <div class="risk-item">
+                            <div class="risk-icon">
+                                <i class="fas fa-life-ring"></i>
+                            </div>
+                            <div class="risk-text">
+                                <h3>Crear planes de contingencia</h3>
+                                <p>Para mitigar impactos negativos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="risk-visual">
+                        <div class="risk-timeline">
+                            <div class="timeline-item risk">
+                                <i class="fas fa-exclamation"></i>
+                                <span>Riesgo</span>
+                            </div>
+                            <div class="timeline-arrow">→</div>
+                            <div class="timeline-item prevention">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Prevención</span>
+                            </div>
+                            <div class="timeline-arrow">→</div>
+                            <div class="timeline-item success">
+                                <i class="fas fa-check"></i>
+                                <span>Éxito</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Crear Productos de Valor -->
+        <div class="slide" id="slide12">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-gem"></i> 8. CREAR PRODUCTOS DE VALOR
+                </h1>
+                <div class="value-creation">
+                    <div class="value-principles">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-user-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h3>Todo trabajo debe ser útil</h3>
+                                <p>Para alguien en el proceso</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="value-text">
+                                <h3>Producto debe entregar información</h3>
+                                <p>Clara, completa y sin ambigüedades</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="value-qualities">
+                        <div class="quality-badge">
+                            <i class="fas fa-eye"></i>
+                            <span>Clara</span>
+                        </div>
+                        <div class="quality-badge">
+                            <i class="fas fa-puzzle-piece"></i>
+                            <span>Completa</span>
+                        </div>
+                        <div class="quality-badge">
+                            <i class="fas fa-bullseye"></i>
+                            <span>Sin ambigüedades</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 13: Principios de la Práctica -->
+        <div class="slide" id="slide13">
+            <div class="slide-content">
+                <h1 class="slide-title">PRINCIPIOS QUE GUÍAN LA PRÁCTICA</h1>
+                <div class="objective-container">
+                    <div class="objective-box">
+                        <i class="fas fa-target"></i>
+                        <h3>OBJETIVO GENERAL:</h3>
+                        <p>Entregar un software operativo de alta calidad que contenga funciones y características que satisfagan las necesidades de todos los participantes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 14: Los 7 Principios de la Práctica -->
+        <div class="slide" id="slide14">
+            <div class="slide-content">
+                <h1 class="slide-title">LOS 7 PRINCIPIOS DE LA PRÁCTICA</h1>
+                <div class="practice-principles">
+                    <div class="practice-item">
+                        <i class="fas fa-divide"></i>
+                        <span>Divide y vencerás</span>
+                    </div>
+                    <div class="practice-item">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Uso de abstracción</span>
+                    </div>
+                    <div class="practice-item">
+                        <i class="fas fa-link"></i>
+                        <span>Buscar la coherencia</span>
+                    </div>
+                    <div class="practice-item">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transferencia de información</span>
+                    </div>
+                    <div class="practice-item">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <span>Modularidad eficaz</span>
+                    </div>
+                    <div class="practice-item">
+                        <i class="fas fa-search"></i>
+                        <span>Buscar patrones</span>
+                    </div>
+                    <div class="practice-item">
+                        <i class="fas fa-users"></i>
+                        <span>Alguien dará mantenimiento</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 15: Divide y Vencerás -->
+        <div class="slide" id="slide15">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-divide"></i> DIVIDE Y VENCERÁS
+                </h1>
+                <div class="divide-conquer-content">
+                    <div class="definition-section">
+                        <div class="definition-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+                        <div class="definition-text">
+                            <h3>Definición</h3>
+                            <p>Abordar problemas complejos dividiéndolos en partes más manejables.</p>
+                        </div>
+                    </div>
+                    <div class="abstraction-section">
+                        <div class="abstraction-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="abstraction-text">
+                            <h3>Aplicar Abstracción</h3>
+                            <p>Simplificar elementos complejos y comunicar su significado en pocas palabras.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 16: Uso de Abstracción -->
+        <div class="slide" id="slide16">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-layer-group"></i> USO DE ABSTRACCIÓN
+                </h1>
+                <div class="abstraction-usage">
+                    <div class="usage-item">
+                        <div class="usage-icon">
+                            <i class="fas fa-compress-alt"></i>
+                        </div>
+                        <div class="usage-text">
+                            <h3>Simplificación</h3>
+                            <p>Simplificación de elementos complejos para comunicar significado.</p>
+                        </div>
+                    </div>
+                    <div class="usage-item">
+                        <div class="usage-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="usage-text">
+                            <h3>Comunicación</h3>
+                            <p>Facilita la comprensión y la comunicación dentro del equipo.</p>
+                        </div>
+                    </div>
+                    <div class="usage-item">
+                        <div class="usage-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="usage-text">
+                            <h3>Niveles de Detalle</h3>
+                            <p>Permite manejar diferentes niveles de detalle según sea necesario.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 17: Buscar la Coherencia -->
+        <div class="slide" id="slide17">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-link"></i> BUSCAR LA COHERENCIA
+                </h1>
+                <div class="coherence-content">
+                    <div class="coherence-principle">
+                        <div class="principle-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="principle-text">
+                            <h3>Contextos Familiares</h3>
+                            <p>Contextos familiares hacen el software más fácil de usar.</p>
+                        </div>
+                    </div>
+                    <div class="coherence-examples">
+                        <div class="example-item">
+                            <i class="fas fa-palette"></i>
+                            <span>Coherencia de colores</span>
+                        </div>
+                        <div class="example-item">
+                            <i class="fas fa-icons"></i>
+                            <span>Iconos reconocibles</span>
+                        </div>
+                        <div class="example-item">
+                            <i class="fas fa-hand-pointer"></i>
+                            <span>Diseño ergonómico</span>
+                        </div>
+                    </div>
+                    <div class="coherence-benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <p>Mejora la experiencia de usuario y reduce errores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 18: Centrarse en la Transferencia de Información -->
+        <div class="slide" id="slide18">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-exchange-alt"></i> TRANSFERENCIA DE INFORMACIÓN
+                </h1>
+                <div class="information-transfer">
+                    <div class="transfer-flows">
+                        <div class="flow-item">
+                            <span class="flow-source">Base de datos</span>
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="flow-target">Usuario final</span>
+                        </div>
+                        <div class="flow-item">
+                            <span class="flow-source">Sistema heredado</span>
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="flow-target">WebApp</span>
+                        </div>
+                        <div class="flow-item">
+                            <span class="flow-source">Componente</span>
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="flow-target">Componente</span>
+                        </div>
+                        <div class="flow-item">
+                            <span class="flow-source">OS</span>
+                            <i class="fas fa-exchange-alt"></i>
+                            <span class="flow-target">Aplicación</span>
+                        </div>
+                    </div>
+                    <div class="interface-focus">
+                        <h3>Especial atención a interfaces:</h3>
+                        <div class="interface-stages">
+                            <div class="stage-item">Análisis</div>
+                            <div class="stage-item">Diseño</div>
+                            <div class="stage-item">Construcción</div>
+                            <div class="stage-item">Pruebas</div>
+                        </div>
+                    </div>
+                    <div class="transfer-goal">
+                        <p>Garantiza que la información llegue clara y completa a su destino.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 19: Software de Modularidad Eficaz -->
+        <div class="slide" id="slide19">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-puzzle-piece"></i> MODULARIDAD EFICAZ
+                </h1>
+                <div class="modularity-content">
+                    <div class="modularity-concept">
+                        <div class="concept-icon">
+                            <i class="fas fa-cubes"></i>
+                        </div>
+                        <div class="concept-text">
+                            <h3>Separación en Módulos</h3>
+                            <p>Separación de entidades en módulos independientes.</p>
+                        </div>
+                    </div>
+                    <div class="modularity-benefit">
+                        <div class="benefit-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <h3>Manejo Organizado</h3>
+                            <p>La modularidad permite manejar sistemas complejos de forma organizada.</p>
+                        </div>
+                    </div>
+                    <div class="modularity-practice">
+                        <div class="practice-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <div class="practice-text">
+                            <h3>Buena Práctica</h3>
+                            <p>Crear módulos eficaces que faciliten mantenimiento y reutilización.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 20: Buscar Patrones -->
+        <div class="slide" id="slide20">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-search"></i> BUSCAR PATRONES
+                </h1>
+                <div class="patterns-content">
+                    <div class="patterns-objective">
+                        <div class="objective-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="objective-text">
+                            <h3>Objetivo</h3>
+                            <p>Construir bibliografía y soluciones para problemas recurrentes (según Bras Appleton).</p>
+                        </div>
+                    </div>
+                    <div class="patterns-benefits">
+                        <div class="benefit-item">
+                            <i class="fas fa-rocket"></i>
+                            <span>Desarrollo consistente y eficiente</span>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-search"></i>
+                            <span>Detectar errores y omisiones</span>
+                        </div>
+                    </div>
+                    <div class="patterns-perspective">
+                        <div class="perspective-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <p>Permite representar problemas y soluciones desde varias perspectivas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 21: Mantener y Mejorar -->
+        <div class="slide" id="slide21">
+            <div class="slide-content">
+                <h1 class="slide-title">
+                    <i class="fas fa-users"></i> ALGUIEN DARÁ MANTENIMIENTO
+                </h1>
+                <div class="maintenance-content">
+                    <div class="maintenance-need">
+                        <div class="need-icon">
+                            <i class="fas fa-wrench"></i>
+                        </div>
+                        <div class="need-text">
+                            <h3>Necesidad de Mantenimiento</h3>
+                            <p>El software necesitará mantenimiento: corregir errores, adaptarse a cambios o añadir funcionalidades.</p>
+                        </div>
+                    </div>
+                    <div class="maintenance-approach">
+                        <div class="approach-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="approach-text">
+                            <h3>Aplicar Ingeniería</h3>
+                            <p>Aplicar ingeniería de software a lo largo del proceso hace el mantenimiento más fácil y eficiente.</p>
+                        </div>
+                    </div>
+                    <div class="maintenance-goal">
+                        <div class="goal-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="goal-text">
+                            <h3>Garantía de Calidad</h3>
+                            <p>Garantiza calidad y sostenibilidad del producto a largo plazo.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 22: Principios de Comunicación -->
+        <div class="slide" id="slide22">
+            <div class="slide-content">
+                <h1 class="slide-title">PRINCIPIOS DE COMUNICACIÓN</h1>
+                <div class="communication-grid">
+                    <div class="communication-item">
+                        <div class="comm-number">1</div>
+                        <h3>Escuchar</h3>
+                        <p>Concentrarse en las palabras del orador, no pensar en la respuesta.</p>
+                    </div>
+                    <div class="communication-item">
+                        <div class="comm-number">2</div>
+                        <h3>Prepárate antes de comunicar</h3>
+                        <p>Dedicar tiempo a comprender el problema antes de reunirse con otros.</p>
+                    </div>
+                    <div class="communication-item">
+                        <div class="comm-number">3</div>
+                        <h3>Alguien debe facilitar actividad</h3>
+                        <p>Cada reunión debe tener un Líder para mantener conversación en una dirección productiva.</p>
+                    </div>
+                    <div class="communication-item">
+                        <div class="comm-number">4</div>
+                        <h3>Cara a cara es lo mejor</h3>
+                        <p>La comunicación presencial reduce malentendidos y agiliza acuerdos.</p>
+                    </div>
+                    <div class="communication-item">
+                        <div class="comm-number">5</div>
+                        <h3>Tomar Notas y Documentar Decisiones</h3>
+                        <p>Registrar lo conversado asegura claridad y seguimiento posterior.</p>
+                    </div>
+                    <div class="communication-item">
+                        <div class="comm-number">6</div>
+                        <h3>Esforzarse por la colaboración</h3>
+                        <p>Buscar soluciones en conjunto en lugar de imponer puntos de vista.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 23: Principios de Comunicación (Continuación) -->
+        <div class="slide" id="slide23">
+            <div class="slide-content">
+                <h1 class="slide-title">PRINCIPIOS DE COMUNICACIÓN</h1>
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #3498db;">Continuación</h2>
+                <div class="communication-grid">
+                    <div class="communication-item">
+                        <div class="comm-number">7</div>
+                        <h3>Mantenerse enfocado, modularize su discusión</h3>
+                        <p>Evitar distracciones y dividir los temas para tratarlos con claridad.</p>
+                    </div>
+                    <div class="communication-item">
+                        <div class="comm-number">8</div>
+                        <h3>Si algo no está claro, haz un dibujo</h3>
+                        <p>Apoyarse en esquemas o diagramas para aclarar ideas.</p>
+                    </div>
+                    <div class="communication-item special">
+                        <div class="comm-number">8.1</div>
+                        <h3>Una vez que esté de acuerdo en algo, seguir adelante</h3>
+                        <p>No volver constantemente sobre decisiones ya cerradas.</p>
+                    </div>
+                    <div class="communication-item special">
+                        <div class="comm-number">8.2</div>
+                        <h3>Si no puede ponerse de acuerdo, seguir adelante</h3>
+                        <p>No atascar la comunicación en desacuerdos, priorizar el avance.</p>
+                    </div>
+                    <div class="communication-item special">
+                        <div class="comm-number">8.3</div>
+                        <h3>Si característica o función no está clara y no se puede aclarar, continúe</h3>
+                        <p>Registrar dudas y avanzar en lo posible para no frenar el progreso.</p>
+                    </div>
+                    <div class="communication-item">
+                        <div class="comm-number">9</div>
+                        <h3>Negociación no es concurso ni un juego</h3>
+                        <p>Debe buscar beneficio mutuo, no "ganar" a costa del otro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 24: Conclusiones -->
+        <div class="slide" id="slide24">
+            <div class="slide-content conclusion-slide">
+                <h1 class="slide-title">CONCLUSIONES CLAVE</h1>
+                <div class="conclusions">
+                    <div class="conclusion-item">
+                        <i class="fas fa-star"></i>
+                        <span>Los principios de ingeniería de software son atemporales</span>
+                    </div>
+                    <div class="conclusion-item">
+                        <i class="fas fa-bullseye"></i>
+                        <span>Aplicables a cualquier modelo de desarrollo</span>
+                    </div>
+                    <div class="conclusion-item">
+                        <i class="fas fa-rocket"></i>
+                        <span>Guían tanto el proceso como la práctica</span>
+                    </div>
+                    <div class="conclusion-item">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Facilitan el mantenimiento y la evolución del software</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Keyboard Instructions -->
+    <div class="keyboard-instructions">
+        <span>Usa las flechas ← → o haz clic en los botones para navegar</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
