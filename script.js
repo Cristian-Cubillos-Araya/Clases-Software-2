@@ -1,6 +1,6 @@
 // Variables globales
 let currentSlide = 1;
-const totalSlides = 24;
+const totalSlides = 34;
 
 // Elementos del DOM
 const slides = document.querySelectorAll('.slide');
@@ -202,15 +202,22 @@ function addSlideSpecificEffects(slideNum) {
             // Mantenimiento
             animateMaintenance();
             break;
+        case 21:
+            // Mantenimiento - animación de mantenimiento
+            animateMaintenance();
+            break;
         case 22:
+            // Título de principios estructurales - sin animación especial
+            break;
+        case 23:
+            // Principios estructurales - animación escalonada
+            animateStructuralPrinciples();
+            break;
+        case 24:
             // Principios de comunicación - animación escalonada
             animateCommunicationPrinciples();
             break;
-        case 23:
-            // Principios de comunicación continuación - animación especial
-            animateCommunicationContinuation();
-            break;
-        case 24:
+        case 25:
             // Conclusiones - efecto final
             animateConclusions();
             break;
@@ -295,6 +302,49 @@ function animatePracticeList() {
             item.style.opacity = '1';
         }, index * 100);
     });
+}
+
+// Animación de principios estructurales
+function animateStructuralPrinciples() {
+    const elements = [
+        '.principle-subtitle',
+        '.info-section',
+        '.client-block',
+        '.user-block'
+    ];
+    
+    elements.forEach((selector, index) => {
+        const element = document.querySelector(selector);
+        if (element) {
+            setTimeout(() => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease';
+                
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 100);
+            }, index * 300);
+        }
+    });
+    
+    // Animar elementos de las listas
+    setTimeout(() => {
+        const listItems = document.querySelectorAll('.info-list li, .block-list li');
+        listItems.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateX(-20px)';
+                item.style.transition = 'all 0.4s ease';
+                
+                setTimeout(() => {
+                    item.style.opacity = '1';
+                    item.style.transform = 'translateX(0)';
+                }, 50);
+            }, index * 150);
+        });
+    }, 1200);
 }
 
 // Animación de principios de comunicación
