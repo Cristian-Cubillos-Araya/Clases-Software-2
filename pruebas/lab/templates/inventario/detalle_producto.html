@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}Detalle de Producto | Sistema de Inventario{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'dashboard_inventario' %}">Inventario</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'lista_productos' %}">Productos</a></li>
+            <li class="breadcrumb-item active">{{ producto.nombre }}</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Información del Producto -->
+        <div class="col-md-6">
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0"><i class="fas fa-box me-2"></i>Información del Producto</h4>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <h5 class="text-primary">{{ producto.nombre }}</h5>
+                        <span class="badge bg-secondary">{{ producto.codigo }}</span>
+                        <span class="badge bg-info">{{ producto.categoria.nombre }}</span>
+                    </div>
+                    
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <p class="mb-1 text-muted">Precio:</p>
+                            <h5>${{ producto.precio }}</h5>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-1 text-muted">Stock Actual:</p>
+                            {% if producto.stock <= 5 %}
+                                <h5><span class="badge bg-danger">{{ producto.stock }}</span></h5>
+                            {% elif producto.stock <= 10 %}
+                                <h5><span class="badge bg-warning text-dark">{{ producto.stock }}</span></h5>
+                            {% else %}
+                                <h5><span class="badge bg-success">{{ producto.stock }}</span></h5>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <p class="text-muted mb-1">Descripción:</p>
+                        <p>{{ producto.descripcion|default:"Sin descripción" }}</p>
+                    </div>
+                    
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <a href="{% url 'registrar_movimiento' %}?producto={{ producto.id }}" class="btn btn-success">
+                            <i class="fas fa-exchange-alt me-2"></i>Registrar Movimiento
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Historial de Movimientos -->
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h4 class="mb-0"><i class="fas fa-history me-2"></i>Últimos Movimientos</h4>
+                </div>
+                <div class="card-body">
+                    {% if movimientos %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Fecha</th>
+                                        <th>Tipo</th>
+                                        <th>Cantidad</th>
+                                        <th>Usuario</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for movimiento in movimientos %}
+                                        <tr>
+                                            <td>{{ movimiento.fecha|date:"d/m/Y H:i" }}</td>
+                                            <td>
+                                                {% if movimiento.tipo == 'entrada' %}
+                                                    <span class="badge bg-success">Entrada</span>
+                                                {% else %}
+                                                    <span class="badge bg-warning text-dark">Salida</span>
+                                                {% endif %}
+                                            </td>
+                                            <td>{{ movimiento.cantidad }}</td>
+                                            <td>{{ movimiento.usuario.username }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <p class="text-center">No hay movimientos registrados para este producto.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard Inventario | Sistema de Inventario{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <h1 class="mb-4"><i class="fas fa-chart-line me-2"></i>Dashboard de Inventario</h1>
+    
+    <div class="row">
+        <!-- Resumen de Productos -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-primary h-100">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-box me-2"></i>Resumen de Productos</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="text-center mb-4">{{ total_productos }}</h3>
+                    <div class="d-grid">
+                        <a href="{% url 'lista_productos' %}" class="btn btn-outline-primary">Ver Productos</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Resumen de Categorías -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-success h-100">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-tags me-2"></i>Categorías</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="text-center mb-4">{{ total_categorias }}</h3>
+                    <div class="d-grid">
+                        <a href="#" class="btn btn-outline-success">Administrar Categorías</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Resumen de Movimientos -->
+        <div class="col-md-4 mb-4">
+            <div class="card border-info h-100">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-exchange-alt me-2"></i>Movimientos Recientes</h5>
+                </div>
+                <div class="card-body">
+                    <h3 class="text-center mb-4">{{ total_movimientos }}</h3>
+                    <div class="d-grid">
+                        <a href="{% url 'registrar_movimiento' %}" class="btn btn-outline-info">Registrar Movimiento</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Productos con Stock Bajo -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h5 class="mb-0"><i class="fas fa-exclamation-triangle me-2"></i>Productos con Stock Bajo</h5>
+                </div>
+                <div class="card-body">
+                    {% if productos_stock_bajo %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Código</th>
+                                    <th>Nombre</th>
+                                    <th>Categoría</th>
+                                    <th>Stock Actual</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for producto in productos_stock_bajo %}
+                                <tr>
+                                    <td>{{ producto.codigo }}</td>
+                                    <td>{{ producto.nombre }}</td>
+                                    <td>{{ producto.categoria.nombre }}</td>
+                                    <td><span class="badge bg-danger">{{ producto.stock }}</span></td>
+                                    <td>
+                                        <a href="{% url 'detalle_producto' producto.id %}" class="btn btn-sm btn-info">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                        <a href="{% url 'registrar_movimiento' %}?producto={{ producto.id }}" class="btn btn-sm btn-success">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <p class="text-center">No hay productos con stock bajo.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Últimos Movimientos -->
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <h5 class="mb-0"><i class="fas fa-history me-2"></i>Últimos Movimientos</h5>
+                </div>
+                <div class="card-body">
+                    {% if ultimos_movimientos %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Fecha</th>
+                                    <th>Producto</th>
+                                    <th>Tipo</th>
+                                    <th>Cantidad</th>
+                                    <th>Usuario</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for movimiento in ultimos_movimientos %}
+                                <tr>
+                                    <td>{{ movimiento.fecha|date:"d/m/Y H:i" }}</td>
+                                    <td>{{ movimiento.producto.nombre }}</td>
+                                    <td>
+                                        {% if movimiento.tipo == 'entrada' %}
+                                        <span class="badge bg-success">Entrada</span>
+                                        {% else %}
+                                        <span class="badge bg-warning text-dark">Salida</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>{{ movimiento.cantidad }}</td>
+                                    <td>{{ movimiento.usuario.username }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% else %}
+                    <p class="text-center">No hay movimientos registrados.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

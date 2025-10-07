@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h1 class="mb-4">Dashboard Principal</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Acceso Rápido</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    <a href="{% url 'dashboard_inventario' %}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-chart-bar me-2"></i> Dashboard de Inventario
+                    </a>
+                    <a href="{% url 'lista_productos' %}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-boxes me-2"></i> Gestión de Productos
+                    </a>
+                    <a href="{% url 'nuevo_producto' %}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-plus-circle me-2"></i> Nuevo Producto
+                    </a>
+                    <a href="{% url 'registrar_movimiento' %}" class="list-group-item list-group-item-action">
+                        <i class="fas fa-exchange-alt me-2"></i> Registrar Movimiento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6">
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">Información de Usuario</h5>
+            </div>
+            <div class="card-body">
+                <h5>Bienvenido, {{ user.get_full_name|default:user.username }}</h5>
+                <p><strong>Rol:</strong> {{ user.get_rol_display }}</p>
+                <p><strong>Último acceso:</strong> {{ user.last_login|date:"d/m/Y H:i" }}</p>
+                <a href="{% url 'perfil' %}" class="btn btn-outline-primary">
+                    <i class="fas fa-user-edit me-2"></i> Ver Perfil
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

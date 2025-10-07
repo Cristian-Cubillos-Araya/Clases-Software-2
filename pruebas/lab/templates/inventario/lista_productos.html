@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}Gestión de Productos | Sistema de Inventario{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1><i class="fas fa-boxes me-2"></i>Gestión de Productos</h1>
+        <a href="{% url 'nuevo_producto' %}" class="btn btn-primary">
+            <i class="fas fa-plus-circle me-2"></i>Nuevo Producto
+        </a>
+    </div>
+
+    {% if messages %}
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+    <div class="card">
+        <div class="card-header bg-light">
+            <div class="row">
+                <div class="col-md-6">
+                    <form method="get" class="d-flex">
+                        <input type="text" name="q" class="form-control me-2" placeholder="Buscar por nombre o código" value="{{ request.GET.q }}">
+                        <button type="submit" class="btn btn-outline-primary">Buscar</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex justify-content-md-end">
+                        <select name="categoria" class="form-select w-50" onchange="this.form.submit()">
+                            <option value="">Todas las categorías</option>
+                            {% for cat in categorias %}
+                                <option value="{{ cat.id }}" {% if request.GET.categoria == cat.id|stringformat:"i" %}selected{% endif %}>
+                                    {{ cat.nombre }}
+                                </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            {% if productos %}
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Categoría</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for producto in productos %}
+                                <tr>
+                                    <td>{{ producto.codigo }}</td>
+                                    <td>{{ producto.nombre }}</td>
+                                    <td>{{ producto.categoria.nombre }}</td>
+                                    <td>${{ producto.precio }}</td>
+                                    <td>
+                                        {% if producto.stock <= 5 %}
+                                            <span class="badge bg-danger">{{ producto.stock }}</span>
+                                        {% elif producto.stock <= 10 %}
+                                            <span class="badge bg-warning text-dark">{{ producto.stock }}</span>
+                                        {% else %}
+                                            <span class="badge bg-success">{{ producto.stock }}</span>
+                                        {% endif %}
+                                    </td>
+                                    <td>
+                                        <div class="btn-group" role="group">
+                                            <a href="{% url 'detalle_producto' producto.id %}" class="btn btn-sm btn-info" title="Ver detalles">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="{% url 'registrar_movimiento' %}?producto={{ producto.id }}" class="btn btn-sm btn-success" title="Registrar movimiento">
+                                                <i class="fas fa-exchange-alt"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            {% else %}
+                <div class="alert alert-info">
+                    No se encontraron productos. <a href="{% url 'nuevo_producto' %}">Agregar un nuevo producto</a>.
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
