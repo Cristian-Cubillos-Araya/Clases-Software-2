@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-web
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-web
+  template:
+    metadata:
+      labels:
+        app: flask-web
+    spec:
+      containers:
+        - name: flask-web
+          image: lab-web:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 5000
+          livenessProbe:
+            httpGet:
+              path: /info
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          readinessProbe:
+            httpGet:
+              path: /info
+              port: 5000
+            initialDelaySeconds: 5
+            periodSeconds: 10
